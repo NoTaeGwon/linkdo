@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "exportedAt": "2025-12-07T12:00:00.000Z",
+  "tasks": [
+    {
+      "id": "task-001",
+      "title": "React 공부하기",
+      "description": "useState, useEffect, useRef 등 React Hooks 학습",
+      "priority": "high",
+      "status": "in-progress",
+      "category": "development"
+    },
+    {
+      "id": "task-002",
+      "title": "TypeScript 기초",
+      "description": "타입 정의, 인터페이스, 제네릭 학습",
+      "priority": "high",
+      "status": "done",
+      "category": "development"
+    },
+    {
+      "id": "task-003",
+      "title": "D3.js 시각화",
+      "description": "d3-force를 사용한 그래프 시각화 학습",
+      "priority": "medium",
+      "status": "in-progress",
+      "category": "development"
+    },
+    {
+      "id": "task-004",
+      "title": "프로젝트 기획서 작성",
+      "description": "Linkdo 앱 기능 명세 및 로드맵 작성",
+      "priority": "critical",
+      "status": "done",
+      "category": "planning"
+    },
+    {
+      "id": "task-005",
+      "title": "UI/UX 디자인",
+      "description": "다크 테마 기반 모던한 디자인 구현",
+      "priority": "medium",
+      "status": "in-progress",
+      "category": "design"
+    },
+    {
+      "id": "task-006",
+      "title": "PWA 설정",
+      "description": "오프라인 지원 및 앱 설치 기능",
+      "priority": "low",
+      "status": "done",
+      "category": "development"
+    },
+    {
+      "id": "task-007",
+      "title": "테스트 코드 작성",
+      "description": "Jest + React Testing Library로 단위 테스트",
+      "priority": "medium",
+      "status": "todo",
+      "category": "testing"
+    },
+    {
+      "id": "task-008",
+      "title": "배포 환경 구성",
+      "description": "Vercel 또는 Netlify로 자동 배포 설정",
+      "priority": "low",
+      "status": "todo",
+      "category": "devops"
+    }
+  ],
+  "edges": [
+    { "source": "task-001", "target": "task-002", "weight": 0.8 },
+    { "source": "task-001", "target": "task-003", "weight": 0.6 },
+    { "source": "task-002", "target": "task-003", "weight": 0.5 },
+    { "source": "task-004", "target": "task-005", "weight": 0.7 },
+    { "source": "task-004", "target": "task-001", "weight": 0.4 },
+    { "source": "task-003", "target": "task-005", "weight": 0.5 },
+    { "source": "task-006", "target": "task-008", "weight": 0.6 },
+    { "source": "task-007", "target": "task-001", "weight": 0.3 }
+  ]
+}
+
