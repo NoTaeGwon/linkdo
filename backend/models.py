@@ -1,16 +1,15 @@
 """
-FastAPI에서 사용되는 데이터 검증 및 직렬화를 위한 Pydantic 데이터 모델 정의
-
-Models:
-    TaskCreate: 새 태스크 생성 시 사용
-    TaskUpdate: 태스크 수정 시 사용 (부분 업데이트 지원)
-    TaskResponse: API 응답용 태스크 모델
-    EdgeCreate: 새 엣지 생성 시 사용
-    EdgeResponse: API 응답용 엣지 모델
-
-Types:
-    Priority: 우선순위 (low, medium, high, critical)
-    Status: 상태 (todo, in-progress, done)
+================================================================
+파일명       : models.py
+목적         : Pydantic 데이터 모델 정의
+설명         :
+  - TaskCreate: 새 태스크 생성 시 사용
+  - TaskUpdate: 태스크 수정 시 사용 (부분 업데이트 지원)
+  - TaskResponse: API 응답용 태스크 모델
+  - EdgeCreate: 새 엣지 생성 시 사용
+  - EdgeResponse: API 응답용 엣지 모델
+  - Priority, Status: 열거형 타입 정의
+================================================================
 """
 
 from typing import Literal, Optional
@@ -22,10 +21,10 @@ from pydantic import BaseModel
 # ============================================================
 
 Priority = Literal["low", "medium", "high", "critical"]
-"""태스크 우선순위 타입. low < medium < high < critical 순으로 중요도 증가."""
+"""태스크 우선순위 타입. low < medium < high < critical 순으로 중요도 증가"""
 
 Status = Literal["todo", "in-progress", "done"]
-"""태스크 상태 타입. todo → in-progress → done 순으로 진행."""
+"""태스크 상태 타입. todo → in-progress → done 순으로 진행"""
 
 
 # ============================================================
@@ -34,7 +33,7 @@ Status = Literal["todo", "in-progress", "done"]
 
 class TaskCreate(BaseModel):
     """
-    새 태스크 생성 시 사용하는 모델.
+    새 태스크 생성 시 사용하는 모델
     
     Attributes:
         id: 태스크 고유 식별자 (클라이언트에서 생성)
@@ -54,7 +53,7 @@ class TaskCreate(BaseModel):
 
 class TaskUpdate(BaseModel):
     """
-    태스크 수정 시 사용하는 모델.
+    태스크 수정 시 사용하는 모델
     
     Attributes:
         title: 태스크 제목
@@ -72,7 +71,7 @@ class TaskUpdate(BaseModel):
 
 class TaskResponse(BaseModel):
     """
-    API 응답용 태스크 모델.
+    API 응답용 태스크 모델
     
     Attributes:
         id: 태스크 고유 식별자
@@ -96,7 +95,7 @@ class TaskResponse(BaseModel):
 
 class EdgeCreate(BaseModel):
     """
-    새 엣지(태스크 간 연결) 생성 시 사용하는 모델.
+    새 엣지(태스크 간 연결) 생성 시 사용하는 모델
     
     Attributes:
         source: 시작 노드(태스크)의 ID
@@ -110,7 +109,7 @@ class EdgeCreate(BaseModel):
 
 class EdgeResponse(BaseModel):
     """
-    API 응답용 엣지 모델.
+    API 응답용 엣지 모델
     
     Attributes:
         id: 엣지 고유 식별자 (자동 생성)
